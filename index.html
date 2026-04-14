@@ -19,9 +19,10 @@ p {
 <script>
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?"];
 function dogeMessage() {
-document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[const num = Math.floor(Math.random() * 6);]}</p>`
+var dogeNumber=Math.floor(Math.random() * 6);
+document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`
 }</script>
-<p height="300px" width="500px" id="chatWindow"></p>
+<p id="chatWindow"></p>
 <button onclick="dogeMessage()">make doge chat</button>
 
 </body>
