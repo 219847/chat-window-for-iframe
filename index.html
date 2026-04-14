@@ -27,11 +27,19 @@ document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
 }
+function chat() {
+  document.getElementById("chatWindow").innerHTML+="<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages.
+    You'll be able to chat again in 24 days.</p>"
+  document.getElementById("chat").value="";
+}
 </script>
 <p id="chatWindow"></p>
+<input id="chat">
+<button onclick="chat()">Chat</button>
+<div></div>
 <button onclick="dogeMessage()">make doge chat</button>
 <button onclick="clearChat()">Clear Chat</button>
 </body>
 </html>
-
+9f1900
 
