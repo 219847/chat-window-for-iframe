@@ -21,10 +21,12 @@ var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with m
 function dogeMessage() {
 var dogeNumber=Math.floor(Math.random() * 6);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`
+function clearChat() {
+  document.getElementById("chatWindow").innerHTML="";
 }</script>
 <p id="chatWindow"></p>
 <button onclick="dogeMessage()">make doge chat</button>
-
+<button onclick="clearChat()">Clear Chat</button>
 </body>
 </html>
 
