@@ -46,17 +46,13 @@ function chat() {
   document.getElementById("chat").value="";
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-function loopDogeChat() {
-  setTimeout(() => {
-    dogeMessage();
-    loopDogeChat();
-  }, Math.random() * 5000);
+function runCraft() {
+  notifCraft();
+  setTimeout(runCraft, Math.random() * 5000);
 }
-function loopCraftChat() {
-  setTimeout(() => {
-    notifCraft();
-    loopCraftChat();
-  }, Math.random() * 5000);
+function runDogeMsg() {
+  dogeMessage();
+  setTimeout(runDogeMsg, Math.random() * 5000);
 }
 </script>
 <div id="chatWindow"></div>
@@ -65,10 +61,6 @@ function loopCraftChat() {
 <div></div>
 <button onclick="dogeMessage()">make doge chat</button>
 <button onclick="clearChat()">Clear Chat</button>
-<script>
-loopDogeChat();
-loopCraftChat();
-</script>
 </body>
 </html>
 
