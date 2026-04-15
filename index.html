@@ -23,10 +23,13 @@ p {
 <body style="font-weight: bold;">
 
 <script>
+//global variables
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?", "erm stop the simp", "im not linda booker", "OMG ITS IRENE LMAO", "i am very good at c++"];
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
 var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
 var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
+
+//local chats
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
 var dogeNumber=Math.floor(Math.random() * 10);
@@ -39,6 +42,8 @@ var craftNumber=Math.floor(Math.random() * 6);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Bone has been crafted by ${users[craftNumber]}!</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
+
+//global chats
 function spam() {
   let spam1=Math.floor(Math.random() * 5);
   let spam2=Math.floor(Math.random() * 5);
@@ -46,6 +51,8 @@ function spam() {
   document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super ${petals[spam1]} has been crafted by ${spammers[spam2]}!</p>`;
   }
 }
+
+//button functions
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
 }
@@ -55,6 +62,8 @@ function chat() {
   document.getElementById("chat").value="";
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
+
+//loops  
 function loopDogeChat() {
   setTimeout(() => {
     dogeMessage();
