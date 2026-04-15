@@ -24,14 +24,19 @@ p {
 
 <script>
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?"];
-  
+var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
 var dogeNumber=Math.floor(Math.random() * 6);
-document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`
+document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-  
+function notifCraft() {
+var chatWindow = document.getElementById("chatWindow");
+var craftNumber=Math.floor(Math.random() * 6);
+document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Bone has been crafted by ${users[craftNumber]}!</p>`;
+chatWindow.scrollTop = chatWindow.scrollHeight;
+}
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
 }
@@ -47,8 +52,14 @@ function loopDogeChat() {
     loop();
   }, Math.random() * 5000);
 }
-
+function loopCraftChat() {
+  setTimeout(() => {
+    notifCraft();
+    loop();
+  }, Math.random() * 5000);
+}
 loopDogeChat();
+loopCraftChat();
 </script>
 <div id="chatWindow"></div>
 <input id="chat">
