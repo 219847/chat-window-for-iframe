@@ -68,12 +68,17 @@ function clearChat() {
 function chat() {
   var chatWindow = document.getElementById("chatWindow");
   if (document.getElementById("chat").value!="") {
-  document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#eeff41;">${document.getElementById("username").value}</span>: ${document.getElementById("chat").value}</p>`
-  // mute gone
-  // document.getElementById("chatWindow").innerHTML+=`<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages. <br>You'll be able to chat again in 24 days.</p>`;
-  document.getElementById("chat").value="";
+    if (document.getElementById("username").value!="") {
+      document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#eeff41;">${document.getElementById("username").value}</span>: ${document.getElementById("chat").value}</p>`
+      // mute gone
+      // document.getElementById("chatWindow").innerHTML+=`<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages. <br>You'll be able to chat again in 24 days.</p>`;
+      document.getElementById("chat").value="";}
+    else {
+      document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#eeff41;">Guest #6561</span>: ${document.getElementById("chat").value}</p>`
+      document.getElementById("chat").value="";}
+    }
   chatWindow.scrollTop = chatWindow.scrollHeight;}
-}
+
 
 //loops  
 function loopDogeChat() {
