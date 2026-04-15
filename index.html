@@ -23,11 +23,13 @@ p {
 <body style="font-weight: bold;">
 
 <script>
-var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?"];
+var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?", "erm stop the simp", "im not linda booker", "OMG ITS IRENE LMAO", "i am very good at c++"];
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
+var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
+var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
-var dogeNumber=Math.floor(Math.random() * 6);
+var dogeNumber=Math.floor(Math.random() * 10);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
@@ -36,6 +38,13 @@ var chatWindow = document.getElementById("chatWindow");
 var craftNumber=Math.floor(Math.random() * 6);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Bone has been crafted by ${users[craftNumber]}!</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+function spam() {
+  let spam1=Math.floor(Math.random() * 5);
+  let spam2=Math.floor(Math.random() * 5);
+  for (let i=0; i<6; i++) {
+  document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super ${petals[spam1]} has been crafted by ${spammers[spam2]}!</p>`;
+  }
 }
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
@@ -58,6 +67,10 @@ function loopCraftChat() {
     loopCraftChat();
   }, Math.random() * 5000);
 }
+function runSpam() {
+  spam();
+  setTimeout(runSpam, Math.random() * 15000);
+}
 </script>
 <div id="chatWindow"></div>
 <input id="chat">
@@ -68,6 +81,7 @@ function loopCraftChat() {
 <script>
 loopDogeChat();
 loopCraftChat();
+runSpam();
 </script>
 </body>
 </html>
