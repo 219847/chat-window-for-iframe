@@ -25,8 +25,6 @@ p {
 <script>
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?"];
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
-var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
-var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
 var dogeNumber=Math.floor(Math.random() * 6);
@@ -39,11 +37,6 @@ var craftNumber=Math.floor(Math.random() * 6);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Bone has been crafted by ${users[craftNumber]}!</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-function spam() {
-  for (let i=0; i<6; i++) {
-  document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super ${petals[Math.floor(Math.random() * 5)]} has been crafted by ${spammers[Math.floor(Math.random() * 5)]}!</p>`;
-  }
-}
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
 }
@@ -53,17 +46,17 @@ function chat() {
   document.getElementById("chat").value="";
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-function runCraft() {
-  notifCraft();
-  setTimeout(runCraft, Math.random() * 5000);
+function loopDogeChat() {
+  setTimeout(() => {
+    dogeMessage();
+    loopDogeChat();
+  }, Math.random() * 5000);
 }
-function runDogeMsg() {
-  dogeMessage();
-  setTimeout(runDogeMsg, Math.random() * 5000);
-}
-function runSpam() {
-  spam();
-  setTimeout(runSpam, Math.random() * 15000);
+function loopCraftChat() {
+  setTimeout(() => {
+    notifCraft();
+    loopCraftChat();
+  }, Math.random() * 5000);
 }
 </script>
 <div id="chatWindow"></div>
@@ -72,7 +65,9 @@ function runSpam() {
 <div></div>
 <button onclick="dogeMessage()">make doge chat</button>
 <button onclick="clearChat()">Clear Chat</button>
+<script>
+loopDogeChat();
+loopCraftChat();
+</script>
 </body>
 </html>
-
-
