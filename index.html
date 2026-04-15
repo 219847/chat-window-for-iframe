@@ -24,16 +24,16 @@ p {
 
 <script>
 //global variables
-var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?", "erm stop the simp", "im not linda booker", "OMG ITS IRENE LMAO", "i am very good at c++"];
+var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?", "erm stop the simp", "im not linda booker", "OMG ITS IRENE LMAO", "i am very good at c++", "are you stupid?", "shut up", "bro im not autistic", "219 why are you pairing me up with people"];
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
 var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
 var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
-var lootMessages=["nl", "1u", "2u", "WHY 2M", "HOW NL", "2UUUUUU"];
-var lootMessagesUsers=["dogedoge4", "219847", "_Terrabyte69", "Promanq", "824", "Expfr", "Opatomic", "FGTAG", "urdadagon", "NEONLIFE", "purple_cat86", "florriofun", "CharmedZ"];
+var lootMessages=["nl", "1u", "2u", "WHY 2M", "HOW NL", "2UUUUUU", "nl gay", "SELLER MEGA", "BRO WHY"];
+var lootMessagesUsers=["dogedoge4", "219847", "_Terrabyte69", "Promanq", "824", "Expfr", "Opatomic", "FGTAG", "urdadagon", "NEONLIFE", "purple_cat86", "florriofun", "CharmedZ", "spandan", "iamnotwil", "urmomfat", "Lovetoslide", "Danir", "Mhm"];
 //local chats
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
-var dogeNumber=Math.floor(Math.random() * 10);
+var dogeNumber=Math.floor(Math.random() * 14);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
@@ -54,7 +54,7 @@ function spam() {
 }
 function superDefeat() {
   document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Leafbug has been defeated by Manfred!</p>`;
-  for (let i=0; i<3; i++) {document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">${lootMessagesUsers[Math.floor(Math.random() * 13)]}</span>: ${lootMessages[Math.floor(Math.random() * 6)]}</p>`;
+  for (let i=0; i<3; i++) {document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">${lootMessagesUsers[Math.floor(Math.random() * 19)]}</span>: ${lootMessages[Math.floor(Math.random() * 9)]}</p>`;
   }
 }
 //button functions
@@ -83,7 +83,7 @@ function loopCraftChat() {
 }
 function runSpam() {
   spam();
-  setTimeout(runSpam, Math.random() * 15000);
+  setTimeout(runSpam, Math.random() * 30000);
 }
 function runSuperDefeat() {
   superDefeat();
