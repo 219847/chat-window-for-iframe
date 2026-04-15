@@ -41,6 +41,14 @@ function chat() {
   document.getElementById("chat").value="";
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
+function loopDogeChat() {
+  setTimeout(() => {
+    dogeMessage();
+    loop();
+  }, Math.random() * 5000);
+}
+
+loop();
 </script>
 <div id="chatWindow"></div>
 <input id="chat">
