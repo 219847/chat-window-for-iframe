@@ -17,19 +17,28 @@ p {
 <body style="font-weight: bold;">
 
 <script>
+document.getElementById("chat").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    chat();
+  }
+});
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?"];
   
 function dogeMessage() {
+var chatWindow = document.getElementById("chatWindow");
 var dogeNumber=Math.floor(Math.random() * 6);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`
+chatWindow.scrollTop = chatWindow.scrollHeight;
 }
   
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
 }
 function chat() {
+  var chatWindow = document.getElementById("chatWindow");
   document.getElementById("chatWindow").innerHTML+=`<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages. <br>You'll be able to chat again in 24 days.</p>`;
   document.getElementById("chat").value="";
+  chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 </script>
 <div id="chatWindow"></div>
