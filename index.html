@@ -19,6 +19,10 @@ p {
   display: flex;
   flex-direction: column;
 }
+#username::placeholder {
+  font-family: "Ubuntu", sans-serif;
+  color: gray;
+}
 </style>
 <body style="font-weight: bold;">
 
@@ -63,9 +67,12 @@ function clearChat() {
 }
 function chat() {
   var chatWindow = document.getElementById("chatWindow");
-  document.getElementById("chatWindow").innerHTML+=`<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages. <br>You'll be able to chat again in 24 days.</p>`;
+  if (document.getElementById("chat").value!="") {
+  document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#eeff41;">${document.getElementById("username").value}</span>: ${document.getElementById("chat").value}</p>`
+  // mute gone
+  // document.getElementById("chatWindow").innerHTML+=`<p style="color:#9f1900;">You are not allowed to chat right now because of past inappropriate messages. <br>You'll be able to chat again in 24 days.</p>`;
   document.getElementById("chat").value="";
-  chatWindow.scrollTop = chatWindow.scrollHeight;
+  chatWindow.scrollTop = chatWindow.scrollHeight;}
 }
 
 //loops  
@@ -91,6 +98,7 @@ function runSuperDefeat() {
 }
 </script>
 <div id="chatWindow"></div>
+<input id="username" placeholder="Your Name"><br>
 <input id="chat">
 <button onclick="chat()">Chat</button>
 <div></div>
