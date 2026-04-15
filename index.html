@@ -49,11 +49,13 @@ function chat() {
 function loopDogeChat() {
   setTimeout(() => {
     dogeMessage();
+    loopDogeChat();
   }, Math.random() * 5000);
 }
 function loopCraftChat() {
   setTimeout(() => {
     notifCraft();
+    loopCraftChat();
   }, Math.random() * 5000);
 }
 loopDogeChat();
