@@ -28,7 +28,8 @@ var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with m
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
 var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
 var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
-
+var lootMessages=["nl", "1u", "2u", "WHY 2M", "HOW NL", "2UUUUUU"];
+var lootMessagesUsers=["dogedoge4", "219847", "_Terrabyte69", "Promanq", "824", "Expfr", "Opatomic", "FGTAG", "urdadagon", "NEONLIFE", "purple_cat86", "florriofun", "CharmedZ"];
 //local chats
 function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
@@ -51,7 +52,11 @@ function spam() {
   document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super ${petals[spam1]} has been crafted by ${spammers[spam2]}!</p>`;
   }
 }
-
+function superDefeat() {
+  document.getElementById("chatWindow").innerHTML+=`<p style="color:#2bffa3;">A Super Leafbug has been defeated by Manfred!</p>`;
+  for (let i=0; i<3; i++) {document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">${lootMessagesUsers[Math.floor(Math.random() * 13)]}</span>: ${lootMessages[Math.floor(Math.random() * 6)]}</p>`;
+  }
+}
 //button functions
 function clearChat() {
   document.getElementById("chatWindow").innerHTML="";
@@ -80,6 +85,10 @@ function runSpam() {
   spam();
   setTimeout(runSpam, Math.random() * 15000);
 }
+function runSuperDefeat() {
+  superDefeat();
+  setTimeout(runSuperDefeat, Math.random() * 30000);
+}
 </script>
 <div id="chatWindow"></div>
 <input id="chat">
@@ -87,10 +96,12 @@ function runSpam() {
 <div></div>
 <button onclick="dogeMessage()">make doge chat</button>
 <button onclick="clearChat()">Clear Chat</button>
+<button onclick="superDefeat()">test</button>
 <script>
 loopDogeChat();
 loopCraftChat();
 runSpam();
+runSuperDefeat();
 </script>
 </body>
 </html>
