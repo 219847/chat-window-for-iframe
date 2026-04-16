@@ -34,6 +34,7 @@ input {
 <script>
 //global variables
 var dogeMessages=["i love irene", "BRO WHY YOU DYING", "irene pwease come with me to pwom", "stfu", "CLAY IS BALANCED", "are you gay?", "erm stop the simp", "im not linda booker", "OMG ITS IRENE LMAO", "i am very good at c++", "are you stupid?", "shut up", "bro im not autistic", "219 why are you pairing me up with people"];
+var doge5Messages=["i am dogedoge4's alt", "i am gay", "i am linda booker", "i am lesbian with irene"];  
 var users=["_Terrabyte69", "Promanq", "Expfr", "219847", "824", "dogedoge4"];
 var petals=["Glass", "Bone", "Clover", "Yucca", "Triangle"];
 var spammers=["-Sam8375", "Manfred", "1217king", "Luai2", "HUDUMOC"];
@@ -44,6 +45,12 @@ function dogeMessage() {
 var chatWindow = document.getElementById("chatWindow");
 var dogeNumber=Math.floor(Math.random() * 14);
 document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge4</span>: ${dogeMessages[dogeNumber]}</p>`;
+chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+function doge5Message() {
+var chatWindow = document.getElementById("chatWindow");
+var doge5Number=Math.floor(Math.random() * 4);
+document.getElementById("chatWindow").innerHTML+=`<p style="color:white;">[Local] <span style="color:#949795;">dogedoge5</span>: ${doge5Messages[doge5Number]}</p>`;
 chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 function notifCraft() {
@@ -92,6 +99,12 @@ function loopDogeChat() {
     loopDogeChat();
   }, Math.random() * 5000);
 }
+function loopDoge5Chat() {
+  setTimeout(() => {
+    doge5Message();
+    loopDoge5Chat();
+  }, Math.random() * 5000);
+}
 function loopCraftChat() {
   setTimeout(() => {
     notifCraft();
@@ -117,6 +130,7 @@ function runSuperDefeat() {
 <button onclick="superDefeat()" title="i originally was not going to have this button but since i left it here after testing and didnt remove it you get to enjoy it">test</button>
 <script>
 loopDogeChat();
+loopDoge5Chat();
 loopCraftChat();
 runSpam();
 runSuperDefeat();
